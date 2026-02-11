@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha pokédex</title>
@@ -39,6 +40,20 @@
     </style>
 </head>
 <body>
+    <script>
+  function tocarSom() {
+    const audio = document.getElementById('somPikachu');
+
+    if (audio) {
+        audio.play().catch(error => {
+            alert("Erro ao tocar som: Verifique o link ou clique na página primeiro!");
+            console.log(error);
+        });
+    } else {
+        alert("O JavaScript não encontrou o elemento com o ID somPikachu");
+    }
+  }
+</script>
     <div class="card">
         <img src="https://static.pokemonpets.com/images/monsters-images-300-300/2025-Shiny-Pikachu.webp" width="200"> 
         <h2>Pikachu</h2>
@@ -46,6 +61,11 @@
         <a href="detalhes.html">
         <button class="botao">Ver Detalhes</button>  
         </a>
+        <audio id="somPikachu" src="pickachu.mp3"></audio>
+        <button
+            onclick="tocarSom()">Ouvir Grito!
+        </button>
     </div>
+
 </body>
 </html>
